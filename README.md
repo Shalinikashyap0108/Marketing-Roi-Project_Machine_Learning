@@ -1,97 +1,84 @@
-# Optimizing Marketing ROI for a Retail Brand
+# Optimizing Retail Marketing ROI Through Data-Driven Decision Making
 
-**Objective**
+In a world where retail brands invest heavily across multiple marketing channels, one question often goes unanswered—Which channel truly drives sales? This project began as a thought experiment while exploring the disconnect between marketing spend and actual returns. Could we quantify the ROI of different campaigns using data science? The result: a Market Mix Modeling approach designed to bring clarity and control to retail marketing strategies.
 
-This project builds a Market Mix Model to determine the effectiveness of various marketing channels (TV, online ads, email marketing, etc.) in driving sales. It provides actionable insights to optimize marketing spend and maximize ROI.
+**The Motivation**
 
-**Key Features**
+Marketing teams often face pressure to "do more" with limited budgets. TV ads, online campaigns, and email promotions all compete for attention—but not every rupee spent yields the same return. This project simulates a retail brand's marketing landscape and uses regression models and optimization techniques to identify the most impactful marketing mix. The aim is to empower decision-makers with insights that replace guesswork with strategy.
 
-- Data Generation: Hypothetical data simulating marketing spends and corresponding sales.
+**Project Overview**
 
-- Regression Modeling: Implementation of Linear, Ridge, and Lasso regression models to estimate the contributions of each channel to sales.
+We built a Market Mix Model using simulated yet realistic data for TV ads, online advertising, and email campaigns. Each record represents a marketing spend scenario and its corresponding sales outcome. From this foundation, we constructed regression models, performed feature importance analysis, and used optimization techniques to propose an ideal budget allocation.
 
-- Feature Importance Analysis: Evaluating the significance of each marketing channel.
+**Workflow Breakdown**
 
-- Budget Optimization: Using optimization techniques to recommend the best allocation of marketing budgets.
+1. Data Generation & EDA
 
-- Visualizations: Clear and informative visualizations to aid understanding and decision-making.
+- Generated synthetic data to simulate marketing spends and sales figures.
 
-**Tools and Libraries**
+- Incorporated randomness to reflect real-world marketing unpredictability.
 
-- Python
+- Conducted exploratory data analysis to examine relationships between spends and sales using correlation matrices and pair plots.
 
-- pandas, numpy: Data manipulation and preprocessing.
+  ![image](https://github.com/user-attachments/assets/8ca946d2-6f78-49d5-afb0-b93c1c88f1ae)
 
-- matplotlib, seaborn: Data visualization.
+2. Model Building
 
-- scikit-learn: Building regression models.
+- Developed Linear, Ridge, and Lasso regression models.
 
-- scipy.optimize: Budget optimization.
+- Evaluated models based on R² and RMSE to understand performance.
 
-**Workflow**
+- Compared feature coefficients to assess the influence of each channel.
+  
+  ![image](https://github.com/user-attachments/assets/21b91ff5-e186-4250-b2f5-754631fea8d1)
 
-- Data Generation:
+3. Optimization Strategy
 
-  - Simulated data for TV, online, and email marketing spends with corresponding sales figures.
+- Formulated a constrained optimization problem using scipy.optimize to maximize sales within a fixed budget.
 
-  - Added randomness to mimic real-world data.
+- Recommended an optimized budget split across TV, online, and email channels to yield the best returns.
 
-- Exploratory Data Analysis (EDA):
+**Key Insights**
 
-  - Visualized pairwise relationships between marketing channels and sales.
+- Email Marketing emerged as the most impactful channel with a coefficient of 0.34, followed by online ads (0.23) and TV (0.14).
 
-![image](https://github.com/user-attachments/assets/8ca946d2-6f78-49d5-afb0-b93c1c88f1ae)
+- Interestingly, TV spend showed the highest correlation with sales (0.25), but that didn’t translate into the highest ROI when controlling for all variables.
 
+- All three regression models yielded consistent results, though overall R² values were negative due to the small sample size and synthetic nature of the data—highlighting the importance of real-world data for future iterations.
 
-- Model Building:
+Optimized Budget Allocation
+- TV Ads: ₹50,000
 
-  - Trained Linear, Ridge, and Lasso regression models on the data.
+- Online Ads: ₹25,000
 
-  - Evaluated model performance using metrics like MSE and R².
+- Email Marketing: ₹10,000
 
-- Feature Importance:
+This allocation maximizes returns while respecting a defined marketing budget.
 
-  - Extracted and compared feature coefficients across models.
+**Tools & Technologies**
 
-![image](https://github.com/user-attachments/assets/21b91ff5-e186-4250-b2f5-754631fea8d1)
+- Python (Jupyter Notebook)
 
+- pandas, numpy – Data preparation & manipulation
 
-- Optimization:
+- matplotlib, seaborn – Visualization
 
-  - Formulated and solved a budget optimization problem to maximize ROI.
+- scikit-learn – Modeling (Linear, Ridge, Lasso)
 
-  - Output the optimized budget allocation for TV, online ads, and email marketing.
+- scipy.optimize – Budget optimization logic
 
-**Insights**
+**Looking Ahead**
 
-- Effectiveness of Marketing Channels: Detailed insights into the effectiveness of different marketing channels indicate that:
+This project provides a powerful proof of concept. With access to real-world retail data, the model can:
 
-- Email marketing (0.34) has the highest impact on sales, followed by online ads (0.23) and TV ads (0.14).
+- Support more marketing channels (e.g., social media, influencer campaigns).
 
-- Correlation Analysis:
+- Integrate seasonality and lag effects.
 
-  - Correlation matrix indicates that TV ad spend (0.25) has the highest linear relationship with sales, followed by online ad spend (0.17) and email marketing spend (0.11).
-      
-  - ![image](https://github.com/user-attachments/assets/aeabf4d9-10f9-403a-ab1e-7f4e232621ce)
-
-- Model Performance:
-    
-  - For all three models:
-      
-    - R²: -0.8826733986045829
-        
-    - RMSE: 7248.41286282087
-
-- Recommended optimized budget allocation for maximizing sales: TV = 50000.00, Online = 25000.00, Email = 10000.00
-
-**Future Enhancements**
-
-- Incorporate real-world data to improve model accuracy.
-
-- Add support for additional marketing channels like social media and print media.
-
-- Explore advanced modeling techniques for better predictions.
+- Use time series or Bayesian models for deeper forecasting.
 
 **Contact**
 
-For queries or contributions, feel free to reach out at shalini.kashyap0108@gmail.com.
+Have questions or want to collaborate on retail analytics?
+
+Reach me at shalini.kashyap0108@gmail.com

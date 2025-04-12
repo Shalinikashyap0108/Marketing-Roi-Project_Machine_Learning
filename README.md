@@ -84,16 +84,6 @@ This project builds a Market Mix Model to determine the effectiveness of various
 
 - Recommended optimized budget allocation for maximizing sales: TV = 50000.00, Online = 25000.00, Email = 10000.00
 
-**How to Run the Project**
-
-- Clone this repository.
-
-- Install the required libraries using pip install -r requirements.txt.
-
-- Run the script marketing_roi_project.ipynb to execute the analysis and optimization.
-
-- Refer to the output and visualizations for insights.
-
 **Future Enhancements**
 
 - Incorporate real-world data to improve model accuracy.
